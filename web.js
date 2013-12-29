@@ -6,10 +6,7 @@ var app = express.createServer(express.logger());
 var msg = fs.readFileSync('index.html').toString();
 
 app.get('/', function(request, response) {
-  fs.writeFileSync(__dirname + '/output.txt', 'Hello Node', function (err) {
-      if (err) throw err;
-      console.log('It\'s saved!');
-  });
+  fs.writeFileSync(__dirname + '/output.txt', 'Hello Node')
   response.send(msg);
 });
 
