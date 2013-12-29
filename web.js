@@ -7,7 +7,9 @@ var msg = fs.readFileSync('index.html').toString();
 
 app.get('/', function(request, response) {
   fs.writeFileSync(__dirname + '/output.txt', 'Hello Node')
-  response.send(msg);
+  var anothermsg = fs.readFileSync(__dirname + '/output.txt').toString();
+  response.send(anothermsg)
+  // response.send(msg);
 });
 
 var port = process.env.PORT || 8080;
